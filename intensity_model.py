@@ -1,2 +1,0 @@
-class IntensityModel:
-    pass
