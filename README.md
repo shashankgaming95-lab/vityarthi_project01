@@ -1,86 +1,89 @@
-# Healthy Routine ML Chatbot
+# Healthy Routine Chatbot - Humanized Structure
 
-## Overview:-
+## What This Project Does
 
-This project is an intelligent Python-based chatbot that generates a personalized healthy daily routine based on user inputs such as sleep hours, mood, energy levels, stress levels, workload, and daily interests.  
-The system uses a hybrid Machine Learning + Rule-Based approach to provide customized routines and recommendations.
+Imagine having a personal wellness coach that asks you a few simple questions about your day, like how well you slept, how stressed you are, your mood, and this coach give you a customized daily schedule to help you feel better. That's what this chatbot does! It uses AI to understand your situation and suggests activities for morning, afternoon, and evening that matches your needs.
 
-## Features:-
 
-1. Conversational chatbot interaction
-2. Predicts daily routine intensity light or balanced or active
-3. Predicts routine type fitness or productivity or relaxation
-4. Generates complete morning–night routine
-5. Provides recommendations on screen-time, habits, and lifestyle
-6. Modular, maintainable Python codebase
-7. Uses Naive Bayes ML models
 
-## Technologies Used
+## How It Works
 
-1. Python 3
-2. Scikit-learn
-3. NumPy / Pandas
-4. Pickle
-5. Google Collab
-6. Rule-based logic
-7. Object-Oriented Programming
+1. You talk to the chatbot
+2. You answer questions about yourself (sleep, mood, stress, workload)
+3. The AI learns from your answers and processes them
+4. The AI predicts two things:
+   - How intense should your day be? (take it easy vs. go hard)
+   - What should you focus on? (exercise vs. work vs. relaxation)
+5. The chatbot gives you a personalized schedule
+6. You get wellness tips based on your situation
 
-## Project Folder Structure
 
-```
-HealthyRoutineChatbot/
-│
-├── data/
-│   ├── dataset.csv
-│   └── encoder_mappings.json
-│
-├── models/
-│   ├── intensity_model.pkl
-│   └── routine_type_model.pkl
-│
-├── src/
-│   ├── chatbot_interface.py
-│   ├── input_handler.py
-│   ├── preprocessor.py
-│   ├── intensity_model.py
-│   ├── routine_type_model.py
-│   ├── routine_generator.py
-│   └── recommendation_engine.py
-│
-├── training/
-│   ├── train_intensity_model.ipynb
-│   ├── train_routine_type_model.ipynb
-│   └── preprocess_dataset.ipynb
-│
-├── main.py
-│
-├── README.md
-└── statement.md
-```
+## Project Organization
 
-## Installation & Usage
+### Core Files - The Brain of the Chatbot
 
-1. **Clone the repository**:-
-  # git clone <your-repo-link>
+**chatbot_interface.py**
 
-2. **Install dependencies**:-
-  # pip install -r requirements.txt
+This is the "face" of the chatbot where you talk to it. It's responsible for greeting you and keeping the conversation flowing, while also asking follow-up questions to understand what you need. The file shows you the final results in a nice, readable way and make sure everything is presented correctly.
 
-3. **Run the chatbot**:-
-  # python main.py
+**input_handler.py**
 
-## Testing Instructions
+This file listens carefully to everything you tell the chatbot. It makes sure you give valid answers, for example you can't sleep negative hours! It stores all your information safely and asks clarifying questions if something don't make sense.
 
-- Provide the sample input values to validate chatbot's data flow
-- Test wheather low sleep, high stress, invalid categories are there
-- Verify the ML's predictions and make routine generation
 
-## Screenshots
-Code Input:-
-<img width="1908" height="929" alt="Screenshot 2025-11-24 171249" src="https://github.com/user-attachments/assets/45e21741-866c-4e92-a271-c235d814ed1d" />
-<img width="1590" height="791" alt="Screenshot 2025-11-24 171302" src="https://github.com/user-attachments/assets/bf3dadfc-5b13-4a27-ab09-065d45bb7ea9" />
-<img width="1919" height="937" alt="Screenshot 2025-11-24 171317" src="https://github.com/user-attachments/assets/ff6758a3-9c8d-4aab-8b42-ce60efeaefd1" />
-<img width="1900" height="916" alt="Screenshot 2025-11-24 171333" src="https://github.com/user-attachments/assets/c421cf0a-1162-4e13-8bee-4f94dbb32905" />
-<img width="1919" height="935" alt="Screenshot 2025-11-24 171357" src="https://github.com/user-attachments/assets/b4e029d2-428b-44d8-a294-9f1ad401414f" />
-Code's Output:-
-<img width="1718" height="838" alt="Screenshot 2025-11-24 182419" src="https://github.com/user-attachments/assets/1aa6ad71-812f-405a-bca7-7d5ed24115a2" />
+### Intelligence Files - The Decision Makers
+
+**routine_type_model.py**
+
+This file learns patterns from lots of past data about people. When you give your information, this AI decides whether you should focus on fitness, productivity, or relaxation. It uses something called Naive Bayes, a machine learning algorithm, to make smart guesses. If you say you are very stressed and have heavy work, it might suggest relaxation instead of a workout.
+
+**intensity_model.py**
+
+Another AI that decides whether your day should be light, balanced, or active. It looks at your sleep, energy, and stress to make this decision and understand your situation. If you only slept 4 hours, it won't suggest a 45-minute workout.
+
+**preprocessor.py**
+
+This file takes your human answers and converts them to something the AI can understand. It encodes things like "happy" to a number, "stressed" to another number and loads these encodings so the AI always understands the same way. It makes sure data is in the right format before the AI sees it.
+
+
+### Helper Files - The Doers
+
+**routine_generator.py**
+
+This file takes the AI's predictions and creates an actual daily routine. It has a library of activities for different scenarios including light day activities like gentle yoga and short walks, balanced day activities with a mix of exercise and work. It picks activities that match what the AI predicted and shows them to you in a nice morning to afternoon to evening format.
+
+**recommendation_engine.py**
+
+This file looks at your information and gives personalized tips. If you are sleep-deprived, it suggest better sleep habits and if you are stressed it recommend relaxation techniques. It adapts recommendations based on your unique situation and provide tailored advice.
+
+
+### Entry Point
+
+**main.py**
+
+This is what you run to start the whole thing. Just one command: python main.py will connects all the pieces together and gets the conversation started.
+
+**requirements.txt**
+
+This file lists all the tools and libraries you need to install. Before running the chatbot, you install everything listed here.
+
+
+## The Data Flow
+
+<img width="706" height="574" alt="Screenshot 2025-11-24 185508" src="https://github.com/user-attachments/assets/cdcec03f-cbbc-4103-88e6-b20c5111e119" />
+
+
+## What Each File Needs to Do
+
+<img width="827" height="374" alt="Screenshot 2025-11-24 185459" src="https://github.com/user-attachments/assets/d47418d7-d419-4ebb-b45c-3dc6f6f9f0db" />
+
+
+## How to Use This Project
+
+What Happens Next:
+
+1. Chatbot says hello
+2. You answer 5-6 simple questions
+3. AI makes predictions
+4. You get a personalized routine plus tips
+5. You can generate another routine or exit
