@@ -1,2 +1,0 @@
-class InputHandler:
-    pass
