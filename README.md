@@ -20,8 +20,8 @@ The system uses a hybrid Machine Learning + Rule-Based approach to provide custo
 1. Python 3
 2. Scikit-learn
 3. NumPy / Pandas
-4.  Pickle
-5. Jupyter Notebook
+4. Pickle
+5. Google Collab
 6. Rule-based logic
 7. Object-Oriented Programming
 
@@ -61,24 +61,26 @@ HealthyRoutineChatbot/
 ## Installation & Usage
 
 1. **Clone the repository**:-
-   ```
-   git clone <your-repo-link>
-   ```
+  # git clone <your-repo-link>
 
 2. **Install dependencies**:-
-   ```
-   pip install -r requirements.txt
-   ```
+  # pip install -r requirements.txt
 
 3. **Run the chatbot**:-
-   ```
-   python main.py
-   ```
+  # python main.py
 
 ## Testing Instructions
 
-- Provide the sample input to validate chatbot flow
-- Test wheather low sleep, high stress, invalid categories
-- Verify the ML's predictions and routine generation
+- Provide the sample input values to validate chatbot's data flow
+- Test wheather low sleep, high stress, invalid categories are there
+- Verify the ML's predictions and make routine generation
 
 ## Screenshots
+Code Input:-
+<img width="1908" height="929" alt="Screenshot 2025-11-24 171249" src="https://github.com/user-attachments/assets/45e21741-866c-4e92-a271-c235d814ed1d" />
+<img width="1590" height="791" alt="Screenshot 2025-11-24 171302" src="https://github.com/user-attachments/assets/bf3dadfc-5b13-4a27-ab09-065d45bb7ea9" />
+<img width="1919" height="937" alt="Screenshot 2025-11-24 171317" src="https://github.com/user-attachments/assets/ff6758a3-9c8d-4aab-8b42-ce60efeaefd1" />
+<img width="1900" height="916" alt="Screenshot 2025-11-24 171333" src="https://github.com/user-attachments/assets/c421cf0a-1162-4e13-8bee-4f94dbb32905" />
+<img width="1919" height="935" alt="Screenshot 2025-11-24 171357" src="https://github.com/user-attachments/assets/b4e029d2-428b-44d8-a294-9f1ad401414f" />
+Code's Output:-
+<img width="1718" height="838" alt="Screenshot 2025-11-24 182419" src="https://github.com/user-attachments/assets/1aa6ad71-812f-405a-bca7-7d5ed24115a2" />
